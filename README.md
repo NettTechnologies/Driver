@@ -16,15 +16,22 @@ Included interfaces for:
 	-	IGNSW voltage gontrol and shutdown delay
 
 Pinout:
-| dscdcd | dcdcd | dcdc | dc | dc |
-|--------|-------|------|----|----|
-| dcd    | cdc   | dc   | dc | dc |
-| dcdc   | dcd   | dc   | dc | dc |
-| dcd    | cd    | dc   | dc | dc |
-  Pin			Signal																Range
-  M1			GND																		0V
-	M2			Digital/Freq output. Mosfet output		0-20A
-  M3			Digital/Freq output. Mosfet output		0-20A
+| Pin | Signal                             | Range      | Comment |
+|-----|------------------------------------|------------|---------|
+| M1  | GND                                | 0V         |         |
+| M2  | Digital/Freq output. Mosfet output | 0-10A      |         |
+| M3  | Digital/Freq output. Mosfet output | 0-10A      |         |
+| M4  | Pick&Hold                          | 0-5A       |         |
+| L1  | +Battery                           | 0-30V      |         |
+| L2  | Reference +5V. Max 500mA           | 4.9-5.1V   |         |
+| L3  | Reference +12V. Max 250mA          | 11.8-12.2V |         |
+| L4  | Pick&Hold                          | 0-5A       |         |
+|     |                                    |            |         |
+|     |                                    |            |         |
+|     |                                    |            |         |
+|     |                                    |            |         |
+|     |                                    |            |         |
+|     |                                    |            |         |
   M4			Pick&Hold															0-5A
   L1			+Battery															0-30V
 	L2			Reference +5V. 	Max 500mA							4.9-5.1V	
