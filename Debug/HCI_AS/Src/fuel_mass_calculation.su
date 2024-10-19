@@ -1,3 +1,0 @@
-../HCI_AS/Src/fuel_mass_calculation.c:13:6:fuel_mass_calculation	24	static
-../HCI_AS/Src/fuel_mass_calculation.c:42:6:correction_gain_initial_calculation	4	static
-../HCI_AS/Src/fuel_mass_calculation.c:47:6:correction_gain_recalculation	24	static
