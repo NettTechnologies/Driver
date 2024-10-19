@@ -31,16 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdbool.h"
-#include "adc.h"
-#include "can.h"
-#include "dac.h"
-#include "dma.h"
 
-#include "i2c.h"
-#include "spi.h"
-#include "tim.h"
-#include "gpio.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -68,12 +59,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-bool digit_in_1(void);
-void freq_calculation(void);
-float freq_in_1(void);
 
-void digit_out_1(bool);
-void digit_out_2(bool);
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

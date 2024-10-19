@@ -24,15 +24,14 @@
 #include "dma.h"
 #include "fatfs.h"
 #include "i2c.h"
+#include "sdio.h"
 #include "spi.h"
-#include "tim.h"
+#include "usart.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdio.h"
-#include "l99sd.h"
-#include "j1939.h"
 
 /* USER CODE END Includes */
 
@@ -43,7 +42,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-GPIO_PinState pin0;
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -54,9 +53,7 @@ GPIO_PinState pin0;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t freq_counter;
-uint8_t frequency[5];
-uint8_t frequency_pionter;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,12 +64,6 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int _write(int file, char *ptr, int len){
-	int i=0;
-	for (i=0; i<len; i++)
-		ITM_SendChar((*ptr++));
-	return len;
-}
 
 /* USER CODE END 0 */
 
@@ -106,46 +97,28 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_ADC1_Init();
+  MX_ADC3_Init();
   MX_CAN1_Init();
+  MX_CAN2_Init();
   MX_DAC_Init();
-  MX_I2C1_Init();
+  MX_I2C2_Init();
+  MX_SDIO_SD_Init();
+  MX_ADC1_Init();
   MX_SPI2_Init();
-  MX_TIM1_Init();
-  MX_TIM2_Init();
-  MX_TIM3_Init();
+  MX_USART1_Init();
   MX_FATFS_Init();
-  MX_TIM7_Init();
-  MX_TIM13_Init();
-  MX_TIM5_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-  CAN_Config();
 
-  HAL_TIM_PWM_Init(&htim1);
-
-  HAL_TIM_IC_Start(&htim1, TIM_CHANNEL_3);
-
-  KType_Init();
-  HAL_ADC_Start_DMA(&hadc1, adc_buf.dma_buffer, ADC_CHANNELS_NUM*ADC_FILTRATION_STEPS);
-
-  HAL_TIM_Base_Start_IT(&htim5);
-  HAL_TIM_Base_Start_IT(&htim7);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  digit_out_1(false);
-//	  HAL_Delay(50);
-//	  uint8_t buf[8] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
-//	  can_transmit_1(0x3F, 0xFFDE, 0x18, buf);
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
   }
   /* USER CODE END 3 */
 }
@@ -169,7 +142,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLM = 8;
   RCC_OscInitStruct.PLL.PLLN = 240;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
+  RCC_OscInitStruct.PLL.PLLQ = 5;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -191,59 +164,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-bool digit_in_1(void){
-	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET){
-		return true;
-	}
-	else{
-		return false;
-	}
-}
 
-void freq_calculation(void) {
-	frequency[frequency_pionter] = freq_counter;
-	frequency_pionter++;
-	if (frequency_pionter > 4) {
-		frequency_pionter = 0;
-	}
-	freq_counter = 0;
-}
-
-float freq_in_1(void){
-	static uint8_t i;
-	static uint16_t frequency_sum;
-
-	frequency_sum = 0;
-
-	for (i = 0; i<5; i++) {
-		frequency_sum += frequency[i];
-	}
-	return frequency_sum/5.0;
-}
-
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	if (GPIO_Pin == GPIO_PIN_10) {
-		freq_counter++;
-	}
-}
-
-void digit_out_1(bool state){
-	if (state){
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET);
-	}
-	else{
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
-	}
-}
-
-void digit_out_2(bool state){
-	if (state){
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
-	}
-	else{
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
-	}
-}
 /* USER CODE END 4 */
 
 /**

@@ -34,27 +34,12 @@ extern "C" {
 
 /* USER CODE BEGIN Private defines */
 
-#define PUMP_PIN	GPIO_PIN_6
-#define PUMP_PORT	GPIOB
-#define PUMP_TIMER	&htim2
-
-
-typedef struct{
-	TIM_HandleTypeDef *it_timer;
-	uint8_t state;
-	uint16_t pin;
-	GPIO_TypeDef *port;
-	uint8_t port_state;
-	uint16_t t_on;
-	uint16_t t_off;
-} HighCurrentOut_HandleTypeDef;
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-uint16_t PumpPort_SwitchState();
-void pump_cycle(uint16_t pumping_cycle_ms);
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

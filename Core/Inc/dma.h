@@ -35,15 +35,7 @@ extern "C" {
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
-#define ADC_CHANNELS_NUM		6
-#define ADC_FILTRATION_STEPS	10
 
-union adc_buffer{
-	uint32_t dma_buffer[(ADC_FILTRATION_STEPS * ADC_CHANNELS_NUM)>>1];
-	uint16_t dma_buffer_half[ADC_FILTRATION_STEPS * ADC_CHANNELS_NUM];
-};
-
-extern union adc_buffer adc_buf;
 /* USER CODE END Private defines */
 
 void MX_DMA_Init(void);

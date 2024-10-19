@@ -35,30 +35,13 @@ extern "C" {
 extern SPI_HandleTypeDef hspi2;
 
 /* USER CODE BEGIN Private defines */
-typedef struct{
-	uint16_t pin;
-	GPIO_TypeDef * port;
-	int16_t temp_thermo;
-	int16_t temp_int;
-	uint8_t fault;
-	uint8_t scv;
-	uint8_t scg;
-	uint8_t oc;
-} max31855_TypeDef;
 
-typedef enum{
-	SPI_READ_SUCCESS,
-	SPI_READ_ERROR
-} SPIReadErrorCode;
 /* USER CODE END Private defines */
 
 void MX_SPI2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-void KType_Init(void);
 
-int16_t therm_in_2(void);
-int16_t therm_in_3(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -29,24 +29,22 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-#include "dma.h"
+
 /* USER CODE END Includes */
 
 extern ADC_HandleTypeDef hadc1;
+
+extern ADC_HandleTypeDef hadc3;
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
+void MX_ADC3_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
-float analog_in_1(void);
-float analog_in_2(void);
-float analog_in_3(void);
-float rtd_in_1(void);
-float rtd_in_2(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
