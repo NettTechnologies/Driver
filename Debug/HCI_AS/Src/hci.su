@@ -1,0 +1,5 @@
+../HCI_AS/Src/hci.c:130:6:hci_ctrl	16	static
+../HCI_AS/Src/hci.c:462:6:doc_out_stablility_check	16	static
+../HCI_AS/Src/hci.c:494:6:dpf_out_trand_calculation	8	static
+../HCI_AS/Src/hci.c:501:6:dpf_out_stablility_check	16	static
+../HCI_AS/Src/hci.c:534:6:pwm_calculation	24	static

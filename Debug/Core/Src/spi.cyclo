@@ -1,0 +1,7 @@
+../Core/Src/spi.c:31:6:MX_SPI2_Init	2
+../Core/Src/spi.c:63:6:HAL_SPI_MspInit	2
+../Core/Src/spi.c:94:6:HAL_SPI_MspDeInit	2
+../Core/Src/spi.c:119:9:Read_MAX31855	1
+../Core/Src/spi.c:140:9:therm_in_2	1
+../Core/Src/spi.c:144:9:therm_in_3	1
+../Core/Src/spi.c:148:6:KType_Init	1
