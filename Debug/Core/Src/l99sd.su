@@ -1,0 +1,7 @@
+../Core/Src/l99sd.c:54:6:Injector_Start	16	static
+../Core/Src/l99sd.c:69:6:ShootOff_Start	16	static
+../Core/Src/l99sd.c:84:6:L99SD_Init	16	static
+../Core/Src/l99sd.c:89:6:L99SD_Stop	16	static
+../Core/Src/l99sd.c:96:10:SyncPort_SwitchState	24	static
+../Core/Src/l99sd.c:111:9:pwm_out_1	16	static
+../Core/Src/l99sd.c:136:6:pwm_out_2	16	static

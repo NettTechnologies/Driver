@@ -1,0 +1,4 @@
+../Core/Src/J1939.c:20:6:can_transmit_1	16	static
+../Core/Src/J1939.c:29:6:can_transmit_fm1	16	static
+../Core/Src/J1939.c:127:9:can_receive_1	24	static
+../Core/Src/J1939.c:144:6:Analise_RxMessage	24	static
