@@ -1,9 +1,0 @@
-../Core/Src/adc.c:32:6:MX_ADC1_Init	8
-../Core/Src/adc.c:125:6:HAL_ADC_MspInit	3
-../Core/Src/adc.c:177:6:HAL_ADC_MspDeInit	2
-../Core/Src/adc.c:208:7:ADC_GetVoltage_0_5	2
-../Core/Src/adc.c:219:7:analog_in_1	1
-../Core/Src/adc.c:224:7:analog_in_2	1
-../Core/Src/adc.c:229:7:analog_in_3	1
-../Core/Src/adc.c:234:7:rtd_in_1	1
-../Core/Src/adc.c:239:7:rtd_in_2	1

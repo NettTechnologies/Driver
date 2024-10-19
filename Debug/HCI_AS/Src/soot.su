@@ -1,7 +1,0 @@
-../HCI_AS/Src/soot.c:5:7:viscosity_calculation	8	static
-../HCI_AS/Src/soot.c:9:7:dencity_calculation	16	static
-../HCI_AS/Src/soot.c:13:7:f	24	static
-../HCI_AS/Src/soot.c:24:7:soot_residual	32	static
-../HCI_AS/Src/soot.c:31:7:ws_calculation	16	static
-../HCI_AS/Src/soot.c:43:7:soot_calculation	24	static
-../HCI_AS/Src/soot.c:54:6:soot_loading_calculation	8	static
